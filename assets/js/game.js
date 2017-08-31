@@ -11,18 +11,16 @@ var userRecord = {
  	losses: 0
 };
 
-// get a new word for guessing
-function getNewWord(){
-	return pickGame().title.toUpperCase();
-}
-
 // current game variables
 var currentGame = {
+	item: null,
 	word: "",
 	misses: 0,
 	guesses: [],
+	// set new game
 	reset: function(){
-		this.word = getNewWord();
+		this.item = pickGame();
+		this.word = this.item.title.toUpperCase();
 		this.misses = 0;
 		this.guesses = [];
 	}
@@ -44,7 +42,7 @@ function getWordWithGuesses(){
 	for (var i=0; i<currentGame.word.length; i++){
 		var wordLetter = currentGame.word.charAt(i);
 		if (wordLetter === " "){
-			wordWithGuesses.push("&nbsp;");
+			wordWithGuesses.push("<br/>");
 			continue;
 		}
 		var letterGuessed = (currentGame.guesses.indexOf(wordLetter) != -1);
@@ -79,6 +77,10 @@ function startGame(){
 	writeGuesses();
 }
 
+function writeItemInfo(){
+	replaceContent("itemInfo", currentGame.item.getInfo());
+}
+
 // user won
 function winGame(){
 	userRecord.wins++;
@@ -86,9 +88,11 @@ function winGame(){
 	document.getElementById("youWinSound").play();
 
 	var gameResult = 	"You win! The word was: " + currentGame.word;
-	
 	replaceContent("gameResult", gameResult);
 	console.log(gameResult);
+
+	writeItemInfo();
+
 	startGame();
 }
 
@@ -102,6 +106,9 @@ function loseGame(){
 
 	replaceContent("gameResult", gameResult);
 	console.log(gameResult);
+
+	writeItemInfo();
+
 	startGame();
 }
 

@@ -30,6 +30,10 @@ function NESGame(title, year, company){
 	this.title = title;
 	this.year = year;
 	this.company = company;
+	
+	this.getInfo = function(){
+		return this.title + "<br/>" + this.year + "<br/>" + this.company;
+	}
 }
 
 var NESGames = [];
