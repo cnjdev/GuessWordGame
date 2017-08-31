@@ -1,13 +1,36 @@
-#gameTitle {
-	font-size: 24px;
+body,
+.panel-body {
+	background: #000;
+	color: #fff;
 }
 
-#winLossRecord {
+.navbar {
+	background: #800;
+	color: #fff;
+	border: 0;
+}
+
+.panel-heading {
+	background: #bbb;
+	color: #111;
+}
+
+.alert-info, .panel-title {
+	font-size: 18px;
+}
+
+#gameTitle, #gameTitle:hover {
+	font-size: 24px;
+	color: #ddd;
+}
+
+#winLossRecord, #winLossRecord:hover {
 	font-size: 20px;
+	color: #ddd;
 }
 
 #guessedLetters {
-	font-size: 18px;
+	font-size: 24px;
 }
 
 #wordWithGuesses {
@@ -15,5 +38,9 @@
 }
 
 #guessesRemaining {
-	font-size: 24px;
+	font-size: 28px;
+}
+
+#gameResult {
+	font-size: 18px;
 }

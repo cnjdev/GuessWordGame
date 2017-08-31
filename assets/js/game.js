@@ -1,7 +1,7 @@
 
 // rules for the games
 var gameRules = {
-	maxMisses: 10,
+	maxMisses: 8,
 	validLetters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 };
 
@@ -13,7 +13,7 @@ var userRecord = {
 
 // get a new word for guessing
 function getNewWord(){
-	return "KASHISTIS";
+	return pickGame().title.toUpperCase();
 }
 
 // current game variables
@@ -43,8 +43,16 @@ function getWordWithGuesses(){
 	var wordWithGuesses = [];
 	for (var i=0; i<currentGame.word.length; i++){
 		var wordLetter = currentGame.word.charAt(i);
+		if (wordLetter === " "){
+			wordWithGuesses.push("&nbsp;");
+			continue;
+		}
 		var letterGuessed = (currentGame.guesses.indexOf(wordLetter) != -1);
-		wordWithGuesses.push(letterGuessed ? wordLetter : "_");
+		if (letterGuessed){
+			wordWithGuesses.push(wordLetter);	
+		} else {
+			wordWithGuesses.push("_");
+		}
 	}
 	return wordWithGuesses;
 }
@@ -77,8 +85,7 @@ function winGame(){
 
 	document.getElementById("youWinSound").play();
 
-	var gameResult = 	"You win! <br/>" +
-										"The word was: " + currentGame.word;
+	var gameResult = 	"You win! The word was: " + currentGame.word;
 	
 	replaceContent("gameResult", gameResult);
 	console.log(gameResult);
@@ -91,8 +98,7 @@ function loseGame(){
 
 	document.getElementById("youLoseSound").play();
 
-	var gameResult = 	"Sorry, you lose. <br/>" +
-										"The word was: " + currentGame.word;
+	var gameResult = 	"Sorry, you lose. The word was: " + currentGame.word;
 
 	replaceContent("gameResult", gameResult);
 	console.log(gameResult);
