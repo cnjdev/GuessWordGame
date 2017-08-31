@@ -31,9 +31,13 @@ function NESGame(title, year, company){
 	this.year = year;
 	this.company = company;
 	
+	this.getTitle = function(){
+		return this.title.toUpperCase();
+	};
+
 	this.getInfo = function(){
 		return this.title + "<br/>" + this.year + "<br/>" + this.company;
-	}
+	};
 }
 
 var NESGames = [];

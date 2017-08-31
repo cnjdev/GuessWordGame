@@ -27,7 +27,7 @@ var currentGame = {
 };
 
 function replaceContent(elementId, elementHtml){
-	document.getElementById(elementId).innerHTML = elementHtml;
+	$("#"+elementId).html(elementHtml);
 }
 
 // write record of Wins and Losses 
@@ -81,13 +81,8 @@ function writeItemInfo(){
 	replaceContent("itemInfo", currentGame.item.getInfo());
 }
 
-// user won
-function winGame(){
-	userRecord.wins++;
-
-	document.getElementById("youWinSound").play();
-
-	var gameResult = 	"You win! The word was: " + currentGame.word;
+// write game result, item information, and restart the game
+function startOver(gameResult){
 	replaceContent("gameResult", gameResult);
 	console.log(gameResult);
 
@@ -96,20 +91,24 @@ function winGame(){
 	startGame();
 }
 
+// user won
+function winGame(){
+	userRecord.wins++;
+
+	document.getElementById("youWinSound").play();
+
+	var gameResult = 	"You win! The item was: " + currentGame.word;
+	startOver(gameResult);
+}
+
 // user lost
 function loseGame(){
 	userRecord.losses++;
 
 	document.getElementById("youLoseSound").play();
 
-	var gameResult = 	"Sorry, you lose. The word was: " + currentGame.word;
-
-	replaceContent("gameResult", gameResult);
-	console.log(gameResult);
-
-	writeItemInfo();
-
-	startGame();
+	var gameResult = 	"Sorry, you lose. The item was: " + currentGame.word;
+	startOver(gameResult);
 }
 
 // check the current word for the letter guessed
@@ -143,7 +142,9 @@ function checkWordForLetter(wordLetter){
 }
 
 // start the game on load and set the listener
-startGame();
+$(document).ready(function(){
+	startGame();
+});
 
 document.onkeyup = function(event){
 	var userGuess = event.key.toUpperCase();

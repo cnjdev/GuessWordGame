@@ -60,7 +60,20 @@
 	</div>
 
 	<div class="row">
-		<div class="col-md-3 col-sm-3">
+		<div class="col-md-12 col-sm-12">
+			<div class="panel">
+		    <div class="panel-heading">
+		      <h1 class="panel-title">Current Word</h1>
+		    </div>
+		    <div class="panel-body" id="wordWithGuesses">
+					<!-- current word -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-8 col-sm-8">
 			<div class="panel">
 		    <div class="panel-heading">
 		      <h1 class="panel-title">Letters Guessed</h1>
@@ -71,18 +84,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-7 col-sm-7">
-			<div class="panel">
-		    <div class="panel-heading">
-		      <h1 class="panel-title">Current Word</h1>
-		    </div>
-		    <div class="panel-body" id="wordWithGuesses">
-					<!-- current word -->
-				</div>
-			</div>
-		</div>
-
-		<div class="col-md-2 col-sm-2">
+		<div class="col-md-4 col-sm-4">
 			<div class="panel">
 		    <div class="panel-heading">
 		      <h1 class="panel-title">Guesses Remaining</h1>
@@ -96,7 +98,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-md-8 col-sm-8">
+		<div class="col-md-7 col-sm-7">
 			<div class="panel">
 		    <div class="panel-heading">
 		      <h1 class="panel-title">Previous Game Result</h1>
@@ -107,13 +109,16 @@
 			</div>
 		</div>
 
-		<div class="col-md-4 col-sm-4">
+		<div class="col-md-5 col-sm-5">
 			<div class="panel">
 		    <div class="panel-heading">
 		      <h1 class="panel-title">Item Information</h1>
 		    </div>
 		    <div class="panel-body" id="itemInfo">
 					<!-- Result of last game win/loss goes here -->
+					<img src="assets/images/nes_controller.png" 
+						title="Item information appears here after every game." 
+						style="width:100%" />
 				</div>
 			</div>
 		</div>
@@ -127,9 +132,11 @@
 </script>
 
 <audio id="youWinSound">
+	<source src="assets/sounds/1up.mp3" type="audio/mp3">
   <source src="assets/sounds/youWin.wav" type="audio/wav">
 </audio>
 <audio id="youLoseSound">
+	<source src="assets/sounds/1down.mp3" type="audio/mp3">
   <source src="assets/sounds/youLose.wav" type="audio/wav">
 </audio>
 
