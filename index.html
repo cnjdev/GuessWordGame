@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess Word Game</title>
+	
+	<!-- reset css -->
+	<link rel="stylesheet" href="assets/css/reset.css">
+
+	<!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jquery included -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- custom css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	
+ <nav class="navbar navbar-default">
+    <div class="container">
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+          <a href="#" id="gameTitle" class="navbar-brand">
+            Guess Word Game
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+        	<a href="#" id="winLossRecord">
+						Record: 0-0
+					</a>
+				</li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+
+	<div class="alert alert-info alert-dismissible" role="alert"
+		title="Where's the any key?">
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  Press any key to get started.
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h1 class="panel-title">Letters Guessed</h1>
+		    </div>
+		    <div class="panel-body" id="guessedLetters">
+		    	<!-- guesses go here -->
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h1 class="panel-title">Current Word</h1>
+		    </div>
+		    <div class="panel-body" id="wordWithGuesses">
+					<!-- current word -->
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h1 class="panel-title">Guesses Remaining</h1>
+		    </div>
+		    <div class="panel-body" id="guessesRemaining">
+		    	<!-- # of guesses remaining -->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+		<div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h1 class="panel-title">Previous Game Result</h1>
+	    </div>
+	    <div class="panel-body" id="gameResult">
+				<!-- Result of last game win/loss goes here -->
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="assets/js/game.js">
+</script>
+
+<audio id="youWinSound">
+  <source src="assets/sounds/youWin.wav" type="audio/wav">
+</audio>
+<audio id="youLoseSound">
+  <source src="assets/sounds/youLose.wav" type="audio/wav">
+</audio>
+
+</body>
+</html>
