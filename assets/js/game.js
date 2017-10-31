@@ -78,6 +78,7 @@ function writeAvailableLetters(){
 	for (var i=0; i<numLetters; i++){
 		var letterLink = $("<a>");
 		letterLink.html(letters[i]);
+		letterLink.attr("href", "#");
 		letterLink.attr("data-letter", letters[i]);
 		letterLink.addClass("availLetter");
 		$("#availableLetters").append(letterLink);
