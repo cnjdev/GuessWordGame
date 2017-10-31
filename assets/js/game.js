@@ -169,7 +169,7 @@ $(document).ready(function(){
 	startGame();
 });
 
-$(document).on('click touch', '.availLetter', function(){
+$(document).on('click touchstart', '.availLetter', function(){
 	var clickLetter = $(this).data("letter");
 	guessLetter(clickLetter);
 });
