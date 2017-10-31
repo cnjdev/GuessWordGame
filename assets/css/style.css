@@ -52,11 +52,11 @@ body,
 .availLetter {
 	color: #ddd;
 	margin: 5px;
+	cursor: pointer;
 }
 
 .availLetter:hover {
 	color: #800;
-	cursor: pointer;
 	text-decoration: none;
 }
 
