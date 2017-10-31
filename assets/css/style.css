@@ -43,6 +43,23 @@ body,
 	text-align: center;
 }
 
+#availableLetters {
+	font-size: 32px;
+	text-align: center;
+	word-break:break-all;
+}
+
+.availLetter {
+	color: #ddd;
+	margin: 5px;
+}
+
+.availLetter:hover {
+	color: #800;
+	cursor: pointer;
+	text-decoration: none;
+}
+
 #guessesRemaining {
 	font-size: 28px;
 }

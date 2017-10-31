@@ -68,6 +68,22 @@ function writeGuesses(){
 	replaceContent("guessesRemaining", guessesLeft);
 }
 
+// write available letters
+function writeAvailableLetters(){
+	var letters = gameRules.validLetters;
+	var numLetters = letters.length;
+	var halfCount = Math.floor(numLetters / 2);
+
+	$("#availableLetters").empty();
+	for (var i=0; i<numLetters; i++){
+		var letterLink = $("<a>");
+		letterLink.html(letters[i]);
+		letterLink.attr("data-letter", letters[i]);
+		letterLink.addClass("availLetter");
+		$("#availableLetters").append(letterLink);
+	}
+}
+
 // start the game
 function startGame(){
 	currentGame.reset();
@@ -75,6 +91,7 @@ function startGame(){
 	writeWinLossRecord();
 	writeWordWithGuesses();
 	writeGuesses();
+	writeAvailableLetters();
 }
 
 function writeItemInfo(){
@@ -141,9 +158,20 @@ function checkWordForLetter(wordLetter){
 		loseGame(); 
 }
 
+function guessLetter(letter){
+	$("[data-letter='"+letter+"']").remove();
+
+	checkWordForLetter(letter);
+}
+
 // start the game on load and set the listener
 $(document).ready(function(){
 	startGame();
+});
+
+$(document).on('click', '.availLetter', function(){
+	var clickLetter = $(this).data("letter");
+	guessLetter(clickLetter);
 });
 
 document.onkeyup = function(event){
@@ -152,5 +180,5 @@ document.onkeyup = function(event){
 	if (gameRules.validLetters.indexOf(userGuess) == -1)
 		return;
 
-	checkWordForLetter(userGuess);
+	guessLetter(userGuess);
 };
