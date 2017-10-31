@@ -26,6 +26,8 @@ var currentGame = {
 	}
 };
 
+var letterClick = false;
+
 function replaceContent(elementId, elementHtml){
 	$("#"+elementId).html(elementHtml);
 }
@@ -170,9 +172,19 @@ $(document).ready(function(){
 	startGame();
 });
 
-$(document).on('click touchstart', '.availLetter', function(){
-	var clickLetter = $(this).data("letter");
-	guessLetter(clickLetter);
+$(document).on('touchstart', '.availLetter', function() {
+  letterClick = true;
+});
+$(document).on('touchmove', '.availLetter', function() {
+  letterClick = false;
+});
+$(document).on('click touchend', '.availLetter', function(event) {
+	if (event.type == "click") letterClick = true;
+	console.log(event.target);
+  if (letterClick){
+  	var clickLetter = $(this).data("letter");
+		guessLetter(clickLetter);
+	}
 });
 
 document.onkeyup = function(event){
