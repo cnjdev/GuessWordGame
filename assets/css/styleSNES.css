@@ -1,0 +1,73 @@
+body,
+.panel-body {
+	background: #717679;
+	color: #fff;
+}
+
+.navbar {
+	background: #800080;
+	color: #fff;
+	border: 0;
+}
+
+.panel-heading {
+	background: #a8aaaa;
+	color: #111;
+}
+
+.alert-info, .panel-title {
+	font-size: 18px;
+}
+
+#gameTitle, #gameTitle:hover {
+	font-size: 24px;
+	color: #ddd;
+}
+
+#gameTheme, #gameTheme:hover {
+	font-size: 18px;
+	color: #ddd;
+}
+
+#winLossRecord, #winLossRecord:hover {
+	font-size: 20px;
+	color: #ddd;
+}
+
+#guessedLetters {
+	font-size: 24px;
+}
+
+#wordWithGuesses {
+	font-size: 32px;
+	text-align: center;
+}
+
+#availableLetters {
+	font-size: 32px;
+	text-align: center;
+	word-break:break-all;
+}
+
+.availLetter {
+	color: #ddd;
+	margin: 3px;
+	cursor: pointer;
+}
+
+.availLetter:hover {
+	color: #800080;
+	text-decoration: none;
+}
+
+#guessesRemaining {
+	font-size: 28px;
+}
+
+#gameResult {
+	font-size: 18px;
+}
+
+#itemInfo {
+	font-size: 18px;
+}

@@ -19,10 +19,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- custom css -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/styleSNES.css">
 
   <!-- font css -->
-  <link rel="stylesheet" href="assets/fonts/stylesheet.css">
+  <link rel="stylesheet" href="assets/fontsnes/stylesheet.css">
 </head>
 <body>
 	
@@ -36,7 +36,7 @@
         </li>
         <li>
         	<a href="#" id="gameTheme">
-        		(Theme: NES Games)
+        		(Theme: SNES Games)
         	</a>
         </li>
       </ul>
@@ -56,8 +56,8 @@
 	<div class="alert alert-info alert-dismissible" role="alert"
 		title="Where's the any key?">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  Press any key to get started.<br/>
-	  <a href="indexSNES.html">SNES Games edition here</a>
+	  Press any key to get started. <br/>
+	  <a href="index.html">NES Games edition here</a>
 	</div>
 
 	<div class="row">
@@ -130,7 +130,7 @@
 		    </div>
 		    <div class="panel-body" id="itemInfo">
 					<!-- Result of last game win/loss goes here -->
-					<img src="assets/images/nes_controller.png" 
+					<img src="assets/images/snes_controller.jpg" 
 						title="Item information appears here after every game." 
 						style="width:100%" />
 				</div>
@@ -140,18 +140,18 @@
 
 </div>
 
-<script type="text/javascript" src="assets/js/dataNESGames.js">
+<script type="text/javascript" src="assets/js/dataSNESGames.js">
 </script>
 <script type="text/javascript" src="assets/js/game.js">
 </script>
 
-<audio id="youWinSound">
-	<source src="assets/sounds/1up.mp3" type="audio/mp3">
-  <source src="assets/sounds/youWin.wav" type="audio/wav">
+<audio id="youWinSound">	
+	<source src="assets/sounds/smw1up.mp3" type="audio/mp3">
+  <source src="assets/sounds/smw1up.wav" type="audio/wav">
 </audio>
 <audio id="youLoseSound">
-	<source src="assets/sounds/1down.mp3" type="audio/mp3">
-  <source src="assets/sounds/youLose.wav" type="audio/wav">
+	<source src="assets/sounds/smwdeath.mp3" type="audio/mp3">
+  <source src="assets/sounds/smwdeath.wav" type="audio/wav">
 </audio>
 
 </body>
