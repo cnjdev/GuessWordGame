@@ -185,6 +185,7 @@ $(document).on('click touchend', '.availLetter', function(event) {
   	var clickLetter = $(this).data("letter");
 		guessLetter(clickLetter);
 	}
+	letterClick = false; // reset flag for event
 });
 
 document.onkeyup = function(event){
