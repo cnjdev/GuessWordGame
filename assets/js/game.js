@@ -26,8 +26,6 @@ var currentGame = {
 	}
 };
 
-var letterClick = false;
-
 function replaceContent(elementId, elementHtml){
 	$("#"+elementId).html(elementHtml);
 }
