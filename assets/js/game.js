@@ -172,20 +172,11 @@ $(document).ready(function(){
 	startGame();
 });
 
-$(document).on('touchstart', '.availLetter', function() {
-  letterClick = true;
-});
-$(document).on('touchmove', '.availLetter', function() {
-  letterClick = false;
-});
-$(document).on('click touchend', '.availLetter', function(event) {
-	if (event.type == "click") letterClick = true;
+$(document).on('click tap', '.availLetter', function(event) {
+	event.preventDefault();
 	console.log(event.target);
-  if (letterClick){
-  	var clickLetter = $(this).data("letter");
-		guessLetter(clickLetter);
-	}
-	letterClick = false; // reset flag for event
+  var clickLetter = $(this).data("letter");
+	guessLetter(clickLetter);
 });
 
 document.onkeyup = function(event){
